@@ -130,25 +130,25 @@ const countries = [
   {
     name: 'Scotland',
     population: 5463300,
-    capitol: 'Edinburgh',
+    capital: 'Edinburgh',
     language: 'English'
   },
   {
     name: 'Brazil',
     population: 212688125,
-    capitol: 'Brasília',
+    capital: 'Brasília',
     language: 'Portuguese'
   },
   {
     name: 'Egypt',
     population: 102674145,
-    capitol: 'Cairo',
+    capital: 'Cairo',
     language: 'Arabic'
   },
   {
     name: 'Spain',
     population: 47450795,
-    capitol: 'Madrid',
+    capital: 'Madrid',
     language: 'Spanish'
   }
 ]
@@ -164,7 +164,7 @@ import countries from './countries'
 
 ## Mapping Data
 
-Now that we've loaded our data in to `App.js`, we'll use it to return a a list of countries and their capitols.
+Now that we've loaded our data in to `App.js`, we'll use it to return a a list of countries and their capitals.
 
 Inside of the tags for the `RightSidebar`, let's add in the following:
 
@@ -174,7 +174,7 @@ Inside of the tags for the `RightSidebar`, let's add in the following:
     {countries.map((country) => (
       <li>
         <h3>Country: {country.name}</h3>
-        <h5>Capitol: {country.capitol}</h5>
+        <h5>Capital: {country.capital}</h5>
       </li>
     ))}
   </ul>
@@ -187,7 +187,7 @@ Break Down:
 - We use the `{}` notation to tell the React compiler that the next bit of code is JavaScript
 - We utilize the `.map` method on the `countries` data which will in turn give us access to each country object.
 - We then utilize the `()` syntax to return multiple jsx elements without having to use the `return` keyword.
-- Finally, the capitol and country name are provided to each `li` element with heading tags.
+- Finally, the capital and country name are provided to each `li` element with heading tags.
 
 At this point, we can check our browsers and open the console, you'll see the following warning/error:
 
@@ -204,7 +204,7 @@ A few rules for keys:
 - Keys must be unique, (this is how react keeps track of order)
 - Keys are attached to the parent containing element inside of the `.map`, in our example `li`.
 - We can use an `index` as a key, however this is discouraged due to indexes being unstable (they can change). When working with real data, we'll typically have a unique id for each item.
-- You can use any unique reference as a key. In our countries example, each capitol is unique so we can use those as well.
+- You can use any unique reference as a key. In our countries example, each capital is unique so we can use those as well.
 
 #### Implementing Keys
 
@@ -213,9 +213,9 @@ To implement this `key` prop, we can simply attach it to the containing parent, 
 ```jsx
 {
   countries.map((country) => (
-    <li key={country.capitol}>
+    <li key={country.capital}>
       <h3>Country: {country.name}</h3>
-      <h5>Capitol: {country.capitol}</h5>
+      <h5>Capital: {country.capital}</h5>
     </li>
   ))
 }
@@ -237,7 +237,7 @@ Add the following `jsx` to your `CountryItem`:
 return (
   <li className="country-item" id={props.name}>
     <h3>Country: {props.name}</h3>
-    <h5>Capitol: {props.capitol}</h5>
+    <h5>Capital: {props.capital}</h5>
   </li>
 )
 ```
@@ -253,9 +253,9 @@ Our next step is to utilize `.map` to return a `CountryItem` instead of our `li`
 ```jsx
 {
   /* {countries.map((country) => (
-            <li key={country.capitol}>
+            <li key={country.capital}>
               <h3>Country: {country.name}</h3>
-              <h5>Capitol: {country.capitol}</h5>
+              <h5>Capital: {country.capital}</h5>
             </li>
           ))} */
 }
@@ -268,7 +268,7 @@ We'll add the following jsx below the commented out code:
 ```jsx
 {
   countries.map((country) => (
-    <CountryItem capitol={country.capitol} name={country.name} />
+    <CountryItem capital={country.capital} name={country.name} />
   ))
 }
 ```
@@ -279,8 +279,8 @@ We'll add the following jsx below the commented out code:
 {
   countries.map((country) => (
     <CountryItem
-      key={country.capitol}
-      capitol={country.capitol}
+      key={country.capital}
+      capital={country.capital}
       name={country.name}
     />
   ))
