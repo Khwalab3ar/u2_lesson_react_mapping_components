@@ -67,9 +67,24 @@ In the previous section we used something called `props.children`. The `children
 
 When we use the `children` prop, we now have the ability to nest a component within another component in a parent/child relationship:
 
-![ParentChild](https://sei-r.s3.amazonaws.com/u2_lesson_react_mapping_components/parent_child.png)
+```jsx
+<ImageSlider>
+  <Image src="/assets/img-1.pg" />
+  <Image src="/assets/img-2.pg" />
+  <Image src="/assets/img-3.pg" />
+</ImageSlider>
+```
+```jsx
+export default function ImageSlider(props) {
+    return (
+      <div className="img-slider">
+        {props.children}
+      </div>
+    );
+}
+```
 
-Notice in the example above, we are using multiple `Child` components, `props.children` allows us to place more than one component in the `children` spot. You also do not have to place a component as react see's this as just an empty tag.
+Notice in the example above, we are using multiple `Image` components, `props.children` allows us to place more than one component in the `children` spot. You also do not have to place a component as react see's this as just an empty tag.
 
 ### Adding The Sidebars
 
