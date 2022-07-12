@@ -120,7 +120,7 @@ This is for a couple of reasons:
 - `RightSidebar`
   - Accepts children
   - Will dynamically insert content in the space where we declared `props.children`
-  - Can be written using self closing tags, and use a the normal props syntax:
+  - Can be written using self closing tags, and use the normal props syntax:
     - ```jsx
       <Example
         children={
