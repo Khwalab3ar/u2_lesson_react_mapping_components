@@ -189,9 +189,9 @@ Break Down:
 - We then utilize the `()` syntax to return multiple jsx elements without having to use the `return` keyword.
 - Finally, the capital and country name are provided to each `li` element with heading tags.
 
-At this point, we can check our browsers and open the console, you'll see the following warning/error:
+*At this point, we can check our browsers and open the console, you'll see a warning/error.*
 
-![Key Warning](https://sei-r.s3.amazonaws.com/u2_lesson_react_mapping_components/key_warning.png)
+<!-- ![Key Warning](https://sei-r.s3.amazonaws.com/u2_lesson_react_mapping_components/key_warning.png) -->
 
 This warning/error is not a breaking one, which means that your application will still run. However the performance will take a hit in larger applications.
 
